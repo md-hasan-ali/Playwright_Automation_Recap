@@ -5,7 +5,7 @@ export default defineConfig({
   timeout: 30 * 1000,
   retries: 1,
   use: {
-    baseURL: 'https://example.com',
+    baseURL: 'https://demoblaze.com',
     headless: true,
     screenshot: 'on',
     video: 'retain-on-failure',

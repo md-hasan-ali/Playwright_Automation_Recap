@@ -6,8 +6,9 @@ test.describe('Login Page Tests', () => {
     const loginPage = new LoginPage(page);
     await loginPage.navigate('/');
     await loginPage.login('Hasan ali khan', '123456');
- 
-    // const welcomeText = await loginPage.getText('#welcome-message');
-    // expect(welcomeText).toBe('Welcome, testuser!');
+    await page.waitForTimeout(3000);
+
+    const welcomeText = await loginPage.getText('#nameofuser');
+    expect(welcomeText).toBe('Welcome Hasan ali khan');
   });
 });

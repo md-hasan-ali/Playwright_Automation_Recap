@@ -4,7 +4,7 @@ export class LoginPage extends BasePage {
   private usernameField = '#loginusername';
   private passwordField = '#loginpassword';
   private loginButton = '#login2';
-  private loginxpath = "xpath=//button[contains(text(), 'Log in')]";
+  private loginxpath = "//button[contains(text(), 'Log in')]";
 
   async login(username: string, password: string) {
     await this.click(this.loginButton);

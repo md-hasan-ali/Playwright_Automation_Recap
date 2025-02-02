@@ -19,8 +19,8 @@ export class BasePage {
     await this.page.fill(selector, text);
   }
 
-  async getText(selector: string) {
-    let text = this.page.textContent(selector) || '';
-    return text;
+  async getText(selector: string, isXPath: boolean = false): Promise<string> {
+    const locator = isXPath ? this.page.locator(`xpath=${selector}`) : this.page.locator(selector);
+    return (await locator.textContent()) || '';
   }
 }
